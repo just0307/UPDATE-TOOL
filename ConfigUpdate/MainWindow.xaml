@@ -15,8 +15,7 @@
     <Grid Margin="0,0,4,-64.925" Height="576.4" VerticalAlignment="Top">
         <Border Style="{StaticResource Properties_BorderStyle}" VerticalAlignment="Top" Height="50" Margin="5.25,12.2,0.75,0" >
             <Grid Margin="0">
-                <Label Content="网络控制设备-更新工具" HorizontalAlignment="Right" Margin="0,7,161,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="219.86"/>
-                <Image Source="/ConfigUpdate;component/Resources/logo.png" Margin="162,10,0,10" HorizontalAlignment="Left" Panel.ZIndex="-1" Width="31.224" RenderTransformOrigin="0.774,0.502" />
+                <Label Content="网络控制设备-更新工具" HorizontalAlignment="Right" Margin="0,7,171.451,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="219.86"/>
             </Grid>
         </Border>
         <Border Style="{StaticResource Properties_BorderStyle}" Height="83.8" Margin="5.25,67.2,0.75,0" VerticalAlignment="Top">
