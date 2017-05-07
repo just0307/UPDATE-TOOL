@@ -1,0 +1,162 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sdsc="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Luna">
+
+    <Style x:Key="Properties_EntryTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Control.Foreground" Value="#FF000000" />
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Control.Padding" Value="2" />
+        <Setter Property="FrameworkElement.FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="UIElement.AllowDrop" Value="True" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Name="Bd" SnapsToDevicePixels="True" BorderThickness="{TemplateBinding Control.BorderThickness}" Background="#FFFFFFFF">
+                        <ScrollViewer Name="PART_ContentHost" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsFocused" Value="True">
+                            <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FFC70019" />
+                        </Trigger>
+                        <Trigger Property="TextBoxBase.IsReadOnly" Value="True">
+                            <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FFFFFFFF" />
+                            <Setter TargetName="Bd" Property="Border.Background" Value="#FFDFDEE2" />
+                        </Trigger>
+                        <Trigger Property="TextBoxBase.IsEnabled" Value="False">
+                            <Setter TargetName="Bd" Property="Border.BorderBrush" Value="#FFFFFFFF" />
+                            <Setter TargetName="Bd" Property="Border.Background" Value="#FFDFDEE2" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FrameworkElement.Height" Value="20" />
+        <Setter Property="Control.Background" Value="#FFFFFFFF" />
+        <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+        <Setter Property="Control.FontFamily" Value="./Fonts\#Arial" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Right"
+                                        Foreground="#FFC70019" FontSize="14" FontWeight="Bold"
+                                        ToolTip="{Binding ElementName=adornerPlaceholder,
+                                        Path=AdornedElement.(Validation.Errors)[0].ErrorContent}" >
+                            *
+                        </TextBlock>
+                        <Border BorderBrush="#FFC70019" BorderThickness="1" >
+                            <AdornedElementPlaceholder Name="adornerPlaceholder"></AdornedElementPlaceholder>
+                        </Border>
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="FrameworkElement.ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <DrawingBrush x:Key="ComboBoxButtonBrush" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="#FF626469" Geometry="F1M-6.10352E-05,0L4.94971,4.94974 9.89954,0" />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+    <Style x:Key="Properties_ComboBoxToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FrameworkElement.MinWidth" Value="0" />
+        <Setter Property="FrameworkElement.MinHeight" Value="0" />
+        <Setter Property="FrameworkElement.Width" Value="Auto" />
+        <Setter Property="FrameworkElement.Height" Value="Auto" />
+        <Setter Property="Control.Background" Value="#00FFFFFF" />
+        <Setter Property="UIElement.Focusable" Value="False" />
+        <Setter Property="ButtonBase.ClickMode" Value="Press" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid SnapsToDevicePixels="True" Background="{TemplateBinding Control.Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.894*" />
+                            <ColumnDefinition Width="0.106*" />
+                            <ColumnDefinition Width="Auto" SharedSizeGroup="ComboBoxButton" />
+                        </Grid.ColumnDefinitions>
+                        <Rectangle HorizontalAlignment="Center" Width="10" Grid.Column="1" Height="10" VerticalAlignment="Center" Margin="0,0,0,0" Fill="{StaticResource ComboBoxButtonBrush}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Properties_ComboBoxStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Padding" Value="1" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid SnapsToDevicePixels="True" Height="20">
+                        <Border Name="Bd" BorderThickness="{TemplateBinding Control.BorderThickness}" Padding="1" Height="20" VerticalAlignment="Center" Margin="5,0,5,0" Background="#FFFFFFFF">
+                            <Grid Grid.IsSharedSizeScope="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" SharedSizeGroup="ComboBoxButton" />
+                                </Grid.ColumnDefinitions>
+                                <Border Name="SelectedItemBorder" Margin="{TemplateBinding Control.Padding}" Grid.ColumnSpan="2" />
+                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}" Margin="{TemplateBinding Control.Padding}" VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}" Grid.Column="1" Content="{TemplateBinding ComboBox.SelectionBoxItem}" ContentTemplate="{TemplateBinding ComboBox.SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemsControl.ItemTemplateSelector}" />
+                                <ToggleButton Style="{StaticResource Properties_ComboBoxToggleButtonStyle}" Grid.ColumnSpan="3" IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{x:Null}" Foreground="{x:Null}" />
+                            </Grid>
+                        </Border>
+                        <Popup Name="PART_Popup" Focusable="False" AllowsTransparency="True" Placement="Bottom" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" IsOpen="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}">
+                            <sdsc:SystemDropShadowChrome Name="Shdw" MaxHeight="{TemplateBinding ComboBox.MaxDropDownHeight}" MinWidth="{TemplateBinding FrameworkElement.ActualWidth}" Color="Transparent">
+                                <Border Name="DropDownBorder" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderThickness="1">
+                                    <ScrollViewer>
+                                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding UIElement.SnapsToDevicePixels}" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Border>
+                            </sdsc:SystemDropShadowChrome>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ComboBox.IsSelectionBoxHighlighted" Value="True" />
+                                <Condition Property="ComboBox.IsDropDownOpen" Value="False" />
+                            </MultiTrigger.Conditions>
+                            <Setter Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}" Property="Control.Foreground" />
+                        </MultiTrigger>
+                        <Trigger Property="ComboBox.IsSelectionBoxHighlighted" Value="True">
+                            <Setter TargetName="SelectedItemBorder" Property="Border.Background" Value="#FF333333" />
+                        </Trigger>
+                        <Trigger Property="ComboBox.IsEnabled" Value="False">
+                            <Setter TargetName="SelectedItemBorder" Property="Border.Background" Value="#FFE5E5E5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.FontFamily" Value="./Fonts\#Arial" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="FrameworkElement.Height" Value="20" />
+        <Setter Property="Control.Background" Value="{x:Null}" />
+        <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+        <Style.Triggers />
+    </Style>  
+    <Style x:Key="Properties_BorderStyle" TargetType="{x:Type Border}">
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Top" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch" />
+        <Setter Property="FrameworkElement.Margin" Value="10,10,10,0" />
+        <Setter Property="FrameworkElement.Width" Value="Auto" />
+        <Setter Property="Border.Background" Value="#FFE5E5E5" />
+        <Setter Property="Border.CornerRadius" Value="5,5,5,5" />
+    </Style>
+</ResourceDictionary>

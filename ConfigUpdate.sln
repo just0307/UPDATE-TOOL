@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigUpdate", "ConfigUpdate\ConfigUpdate.csproj", "{F45CE611-B468-4379-9493-C7B7ED72C746}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileTransfer", "FileTransfer\FileTransfer.csproj", "{903649AD-CC7F-449D-A24B-1911103B2278}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release_Maintenance|Any CPU = Release_Maintenance|Any CPU
+		Release_Maintenance|x86 = Release_Maintenance|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release_Maintenance|Any CPU.ActiveCfg = Release|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release_Maintenance|Any CPU.Build.0 = Release|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release_Maintenance|x86.ActiveCfg = Release|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F45CE611-B468-4379-9493-C7B7ED72C746}.Release|x86.ActiveCfg = Release|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Debug|x86.ActiveCfg = Debug|x86
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Debug|x86.Build.0 = Debug|x86
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release_Maintenance|Any CPU.ActiveCfg = Release_Maintenance|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release_Maintenance|Any CPU.Build.0 = Release_Maintenance|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release_Maintenance|x86.ActiveCfg = Release_Maintenance|x86
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release_Maintenance|x86.Build.0 = Release_Maintenance|x86
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release|x86.ActiveCfg = Release|x86
+		{903649AD-CC7F-449D-A24B-1911103B2278}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

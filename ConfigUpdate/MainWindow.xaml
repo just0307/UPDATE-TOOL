@@ -1,0 +1,71 @@
+﻿<Window x:Class="ConfigUpdate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:common="clr-namespace:ExternText"
+        Title="网络设备更新工具-EDRM专版" Height="591.475" Width="595.2" Closed="MainWindowClosed" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" >
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionary.xaml" />
+                <ResourceDictionary Source="Info_ResourceDictionary.xaml" />
+                <ResourceDictionary Source="Properties_ResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Margin="0,0,4,-64.925" Height="576.4" VerticalAlignment="Top">
+        <Border Style="{StaticResource Properties_BorderStyle}" VerticalAlignment="Top" Height="50" Margin="5.25,12.2,0.75,0" >
+            <Grid Margin="0">
+                <Label Content="网络控制设备-更新工具" HorizontalAlignment="Right" Margin="0,7,161,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Width="219.86"/>
+                <Image Source="/ConfigUpdate;component/Resources/logo.png" Margin="162,10,0,10" HorizontalAlignment="Left" Panel.ZIndex="-1" Width="31.224" RenderTransformOrigin="0.774,0.502" />
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource Properties_BorderStyle}" Height="83.8" Margin="5.25,67.2,0.75,0" VerticalAlignment="Top">
+            <Grid>
+                <RadioButton x:Name="RadioButtonModule" Content="模块设备" HorizontalAlignment="Left" Margin="25,46.53,0,0" VerticalAlignment="Top" Width="75.275" Height="24.66" Checked="ModuleDeviceSelected" FontSize="14"/>
+                <RadioButton x:Name="RadioButtonSlot" Content="机箱插件" HorizontalAlignment="Left" Margin="105.275,46.53,0,0" VerticalAlignment="Top" Height="24.66" Width="74.48" Checked="SlotDeviceSelected" RenderTransformOrigin="-0.047,0.689" FontSize="14" Visibility="Collapsed"/>
+                <Label x:Name="LabelSlotNum" Content="槽位号" HorizontalAlignment="Left" Margin="320.421,41.53,0,0" VerticalAlignment="Top" FontSize="14" Visibility="Collapsed"/>
+                <common:ExternTextBox x:Name="TextBoxSlotNum" Style="{StaticResource Properties_EntryTextBoxStyle}" Format="Integer" MinValue="1" MaxValue="999" HorizontalAlignment="Left" Height="22" Margin="377.422,43.53,0,0" TextWrapping="NoWrap" Text="1" VerticalAlignment="Top" Width="20.651" TextChanged="TextBoxSlotNumTextChanged" RenderTransformOrigin="1.259,-2.273" Visibility="Collapsed"/>
+                <ComboBox x:Name = "PluginType" Style="{StaticResource Properties_ComboBoxStyle}" Height="25" Margin="220.4,43.53,264,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+                <ComboBox x:Name = "ModuleType" Style="{StaticResource Properties_ComboBoxStyle}" Height="25" Margin="220.4,43.53,264,0" VerticalAlignment="Top" Visibility="Collapsed" SelectionChanged="ModuleSelectChanged" LostFocus="ModuleTypeLostFocus"/>
+                <Label x:Name = "PluginTypeLabel" Content="名称" HorizontalAlignment="Left" Height="29.72" Margin="182.397,41.53,0,0" VerticalAlignment="Top" FontSize="14" Visibility="Collapsed"/>
+                <Label x:Name = "ModuleTypeLabel" Content="名称" HorizontalAlignment="Left" Height="29.72" Margin="182.397,41.53,0,0" VerticalAlignment="Top" FontSize="14" Visibility="Collapsed"/>
+                <Label x:Name = "UpdateModeLabel" Content="更新方式" HorizontalAlignment="Left" Margin="397.05,41.53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.233,0.554" FontSize="14" Height="27" Visibility="Collapsed"/>
+                <ComboBox x:Name = "UpdateMode" Style="{StaticResource Properties_ComboBoxStyle}" Margin="457.8,43.53,10,0" VerticalAlignment="Top" SelectionChanged="UpdateModeSelectionChanged" Height="25" Visibility="Collapsed"/>
+                <Label Content="设备类型信息" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource Properties_BorderStyle}"  Height="86.31" Margin="5.25,156,0.75,0" VerticalAlignment="Top">
+            <Grid>
+                <ComboBox x:Name="ComboNetConnect" Style="{StaticResource Properties_ComboBoxStyle}" HorizontalAlignment="Left" SelectedValue="{Binding LocalAreaConnection, Mode=TwoWay}" Height="25" ItemsSource="{Binding LocalAreaConnectionList, Mode=OneWay}" Margin="91.2,47,0,0" VerticalAlignment="Top" Width="279.4" RenderTransformOrigin="0.643,0.623" FontSize="14"/>
+                <Label Content="网络连接：" HorizontalAlignment="Left" Margin="20,42.757,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.124,0.42" Height="28.243" FontSize="14"/>
+                <Button Content="自动获取地址" Style="{StaticResource Info_ButtonStyle}" HorizontalAlignment="Stretch" Margin="385.407,44.94,20,0" VerticalAlignment="Top" Click="btnAutoGet_Click" Height="27" FontSize="15" FontFamily="Microsoft YaHei" VerticalContentAlignment="Top"/>
+                <Label Content="自动获取地址(可选)" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource Properties_BorderStyle}" Height="204.09" Margin="5.25,348.91,0.75,0" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="IP 地址：" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,57.151,0,0" FontSize="14"/>
+                <Label Content="文件类型：" Margin="20,135.156,433.4,0" VerticalAlignment="Top" FontSize="14"/>
+                <ComboBox x:Name="combo" Style="{StaticResource Properties_ComboBoxStyle}" Margin="96,136.993,209,0" VerticalAlignment="Top" Height="25" FontSize="14" LostFocus="FileTypeComboLostFocus" />
+                <Button Content="更新" Style="{StaticResource Info_ButtonStyle}" HorizontalAlignment="Stretch" Margin="386.345,134.165,20,0" VerticalAlignment="Top" Height="27" Click="UpDate_Click" FontFamily="Microsoft YaHei" FontSize="15"/>
+                <Button Name="fileSelect" Content="文件选择" Style="{StaticResource Info_ButtonStyle}" HorizontalAlignment="Stretch" Margin="386.345,91.156,20,0" VerticalAlignment="Top" Click="Button_Click" Height="27" FontFamily="Microsoft YaHei" VerticalContentAlignment="Top" FontSize="15"/>
+                <common:ExternTextBox x:Name="fileText" Style="{StaticResource Properties_EntryTextBoxStyle}" Height="25" Margin="24,93.156,214,0" TextWrapping="NoWrap"  VerticalAlignment="Top" FontSize="14"/>
+                <common:ExternTextBox x:Name="addressText"  Style="{StaticResource Properties_EntryTextBoxStyle}"  Format="IPv4" Height="25" Margin="96.2,57.196,214,121.894" TextWrapping="Wrap" Text="{Binding CurrentIPStr}" VerticalAlignment="Center" FontSize="14"/>
+                <ProgressBar x:Name="m_ProgressBar" Height="20" Margin="20,181.002,20,0" VerticalAlignment="Top"/>
+                <Label x:Name="AutoGetStatus"  Content="" HorizontalAlignment="Left" Margin="16,159.165,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.2,0.538" FontSize="14"/>
+                <Label Content="更新文件信息" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+            </Grid>
+        </Border>
+        <Border Style="{StaticResource Properties_BorderStyle}"  Height="97.02" Margin="5.25,246.89,0.75,0" VerticalAlignment="Top">
+            <Grid>
+                <Label Content="其他功能(可选)" HorizontalAlignment="Left" Margin="20,9,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                <Button Name="FormattingButton" Content="格式化" Style="{StaticResource Info_ButtonStyle}" HorizontalAlignment="Center" Margin="385.5,55.617,21.5,14.383" VerticalAlignment="Center" Height="27"  FontFamily="Microsoft YaHei" FontSize="15" Click="FormattingClick" Width="172"/>
+                <Button Name="TFFSVersionButton"  Content="TFFS版本" Style="{StaticResource Info_ButtonStyle}" HorizontalAlignment="Center" Margin="385.5,13,21.5,57" VerticalAlignment="Center" Height="27" FontFamily="Microsoft YaHei" FontSize="15" Click="GetTFFSVersionClick"  RenderTransformOrigin="1.798,0.666" Width="172"/>
+                <common:ExternTextBox x:Name="TFFSVersionText" Style="{StaticResource Properties_EntryTextBoxStyle}" Height="25" Margin="176,15,214,0" TextWrapping="NoWrap" Text="{Binding VersionResult}" VerticalAlignment="Top" FontSize="14" />
+            </Grid>
+        </Border>
+
+    </Grid>
+
+
+</Window>

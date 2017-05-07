@@ -1,0 +1,12 @@
+H:\SVN\巫钊软件开发版本库\网络控制设备-更新工具\Lib\FileTransfer.dll
+H:\SVN\巫钊软件开发版本库\网络控制设备-更新工具\Lib\FileTransfer.pdb
+H:\SVN\巫钊软件开发版本库\网络控制设备-更新工具\FileTransfer\obj\Release\FileTransfer.dll
+H:\SVN\巫钊软件开发版本库\网络控制设备-更新工具\FileTransfer\obj\Release\FileTransfer.pdb
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备-更新工具\Lib\FileTransfer.dll
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备-更新工具\Lib\FileTransfer.pdb
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备-更新工具\FileTransfer\obj\Release\FileTransfer.dll
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备-更新工具\FileTransfer\obj\Release\FileTransfer.pdb
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备更新工具-EDRM专版\Lib\FileTransfer.dll
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备更新工具-EDRM专版\Lib\FileTransfer.pdb
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备更新工具-EDRM专版\FileTransfer\obj\Release\FileTransfer.dll
+P:\资料\工具链开发\wuzhao_InToolSet\工具链版本\branches\MyBranches\工具链裁剪版\网络控制设备更新工具-EDRM专版\FileTransfer\obj\Release\FileTransfer.pdb
